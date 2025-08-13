@@ -64,7 +64,7 @@ runs:
         echo "Test-AzTemplate -TemplatePath ${{ inputs.workdir }} -Pester -Skip Secure-Params-In-Nested-Deployments" | Out-File -FilePath ./armttk.ps1
         Invoke-Pester -Script ./armttk.ps1 -EnableExit -OutputFormat NUnitXml -OutputFile ./armttk.xml
     - name: Publish Test Results
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: ARMTTKResults
         path: ./armttk.xml
